@@ -43,9 +43,9 @@ def paste_and_send(text: str):
     """
     将文本粘贴到输入框并发送（Enter 发送；Shift+Enter 换行）
     """
-    pyperclip.copy(text)
     # 在 paste_and_send 前手动点一下输入框
     pyautogui.click(x=881, y=866)  # 改成你输入框的坐标
+    pyperclip.copy(text)
     pyautogui.hotkey('command', 'v')
     time.sleep(SHORT)
     pyautogui.press('enter')
